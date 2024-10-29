@@ -1,0 +1,101 @@
+/* General styling for body and calculator container */
+body {
+    background: linear-gradient(45deg, #161517, #3498db);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 320px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-rows: repeat(6, 1fr); /* 6 equal rows */
+    gap: 10px;
+}
+
+/* Input box styling */
+#inputBox {
+    grid-column: span 4;
+    padding: 15px;
+    font-size: 2rem;
+    border: none;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Button general styling - equal width and height */
+button {
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 60px; /* Ensure consistent height */
+    width: 100%; /* Full width of grid cell */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Operator and equal button */
+button.operator {
+    background: rgba(255, 255, 255, 0.2);
+    color: #f39c12;
+}
+
+.equalBtn {
+    background: #27ae60;
+    color: #fff;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Button press animation */
+button:active {
+    transform: scale(0.9);
+    filter: brightness(1.2);
+}
+
+/* Filter effects */
+button.operator:hover {
+    filter: hue-rotate(90deg) contrast(150%);
+}
+
+.equalBtn:hover {
+    filter: brightness(1.5) contrast(150%);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .calculator {
+        width: 80vw;
+    }
+
+    #inputBox {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+}
